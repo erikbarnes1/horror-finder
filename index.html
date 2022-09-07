@@ -7,9 +7,230 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="#" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="text"></div>
-    <script src="static/script.js" type="module"></script>
+    <div class="logo_container">
+      <div class="upper_left">
+        <div class="horror_finder">HorrorFinder</div>
+        <img class="logo" src="logo.png" />
+        <input type="text" placeholder="Search database..." />
+      </div>
+      <div class="upper_right">
+        <div class="watchlist">Watchlist</div>
+        <div class="divider">|</div>
+        <div class="sign_in">Sign In</div>
+      </div>
+    </div>
+    <div class="large_categories_container">
+      <div class="categories_container">
+        <div class="categories">Categories</div>
+        <span class="line"></span>
+        <div class="under_categories">
+          <div class="gore">
+            Paranormal
+            <span class="line"></span>
+            <div class="list">
+              <ul id="ul">
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" /><em
+                    >(All Paranormal)</em
+                  >
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Supernatural
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Witches & Occult
+                </li>
+                <li class="tag"><img src="tag_filled.png" alt="tag" />Cults</li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Devil & Demons
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Possession
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Haunted House
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="gore">
+            Psychological
+            <span class="line"></span>
+            <div class="list">
+              <ul id="ul2">
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" /><em
+                    >(All Psychological)</em
+                  >
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Mystery
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Found Footage
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Home Invasion
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Internet & Social Media
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="gore">
+            Killer
+            <span class="line"></span>
+            <div class="list">
+              <ul id="ul3">
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" /><em>(All Killer)</em>
+                </li>
+                <li class="tag"><img src="tag_filled.png" alt="tag" />Crime</li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Slasher
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Serial Killer
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Backwoods & Redneck
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Animals & Nature
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Zombies
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Vampires
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Clowns
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="gore">
+            Gore & Disturbing
+            <span class="line"></span>
+            <div class="list">
+              <ul id="ul4">
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" /><em
+                    >(All Gore & Disturbing)</em
+                  >
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Torture
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Splatter
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Cannibalism
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Body Horror
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Controversial & Extreme
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="gore">
+            International
+            <span class="line"></span>
+            <div class="list">
+              <ul id="ul5">
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" /><em
+                    >(All International)</em
+                  >
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Japanese
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />South Korean
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Australian
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Canadian
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />British
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Italian
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Spanish
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="gore other">
+            Other
+            <span class="line"></span>
+            <div class="list">
+              <ul id="ul6">
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Comedy
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Based on actual events
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Sci-Fi
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Period film
+                </li>
+                <li class="tag"><img src="tag_filled.png" alt="tag" />Folk</li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Fantasy
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Urban Legend
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Set in a forest
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Erotic
+                </li>
+                <li class="tag">
+                  <img src="tag_filled.png" alt="tag" />Holiday
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="search_container">
+      <button class="search">Apply Filters</button>
+    </div>
+    <div class="larger_card_container"></div>
+    <div class="hello">Hello why dont i see you</div>
+    <script src="index.js" type="module"></script>
   </body>
 </html>
