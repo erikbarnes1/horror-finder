@@ -4,6 +4,7 @@ import Card from "/static/card.js";
 function newCardy(param) {
   for (let i = 0; i < param.length; i++) {
     let newCard = new Card(
+      `${param[i].simScore}`,
       `${param[i].title}`,
       `${param[i].year}`,
       `${param[i].poster}`,
@@ -18,7 +19,9 @@ function newCardy(param) {
     );
 
     let hello = document.querySelector(".larger_card_container");
-    hello.innerHTML += `<div class="card_container">
+
+    if (param[i].simScore >= 3) {
+      hello.innerHTML += `<div class="card_container">
 <div class="web_card">
 <div class="web_poster">
 <img class="web_image" src=${newCard.poster} alt="poster"></img>
@@ -30,8 +33,8 @@ function newCardy(param) {
         <div class="web_year">(${newCard.year})</div>
       </div>
       <div class="web_matchandwatchlist">
-        <div class="web_match"></div>
-        <div class="web_watchlist"><img src="watchlist.svg.png" alt="wtag" /></div>
+        <div class="web_match_ex">Excellent Match</div>
+        <div class="web_watchlist"><img src="watchlist.svg.png" alt="wtag" title="Add To Watchlist"/></div>
       </div>
     </div>
     <div class="web_middle">
@@ -39,11 +42,18 @@ function newCardy(param) {
       <div class="web_divider">|</div>
       <div class="web_runtime">${newCard.runtime}</div>
       <div class="web_divider">|</div>
-      <div class="web_tags">${newCard.tags}</div>
+      <div class="web_tags">${newCard.tags
+        .toString()
+        .replace(/,/g, ", ")
+        .replace(/All /g, "")}</div>
     </div>
     <div class="web_ratings">
-      <div class="web_imdbrating"><img src="imdb.svg.png" alt="itag" />${newCard.imdbRating}</div>
-      <div class="web_rottentomatoes"><img src="rt.svg.png" alt="rtag" />${newCard.rottenTomatoes}</div>
+      <div class="web_imdbrating"><img src="imdb.svg.png" alt="itag" />${
+        newCard.imdbRating
+      }/10</div>
+      <div class="web_rottentomatoes"><img src="rt.svg.png" alt="rtag" />${
+        newCard.rottenTomatoes
+      }</div>
     </div>
     <div class="web_plot">${newCard.plot}</div>
     <div class="web_lower">
@@ -54,6 +64,100 @@ function newCardy(param) {
   </div>
 </div>
 </div>`;
+    }
+    if (param[i].simScore === 2) {
+      hello.innerHTML += `<div class="card_container">
+<div class="web_card">
+<div class="web_poster">
+<img class="web_image" src=${newCard.poster} alt="poster"></img>
+</div>
+  <div class="web_info">
+    <div class="web_upper">
+      <div class="web_titleandyear">
+        <div class="web_title">${newCard.title}</div>
+        <div class="web_year">(${newCard.year})</div>
+      </div>
+      <div class="web_matchandwatchlist">
+        <div class="web_match_gr">Great Match</div>
+        <div class="web_watchlist"><img src="watchlist.svg.png" alt="wtag" title="Add To Watchlist"/></div>
+      </div>
+    </div>
+    <div class="web_middle">
+      <div class="web_rated">${newCard.rated}</div>
+      <div class="web_divider">|</div>
+      <div class="web_runtime">${newCard.runtime}</div>
+      <div class="web_divider">|</div>
+      <div class="web_tags">${newCard.tags
+        .toString()
+        .replace(/,/g, ", ")
+        .replace(/All /g, "")}</div>
+    </div>
+    <div class="web_ratings">
+      <div class="web_imdbrating"><img src="imdb.svg.png" alt="itag" />${
+        newCard.imdbRating
+      }/10</div>
+      <div class="web_rottentomatoes"><img src="rt.svg.png" alt="rtag" />${
+        newCard.rottenTomatoes
+      }</div>
+    </div>
+    <div class="web_plot">${newCard.plot}</div>
+    <div class="web_lower">
+      <div class="web_people">Director: ${newCard.director}</div>
+      <div class="web_divider">|</div>
+      <div class="web_stars">Stars: ${newCard.stars}</div>
+    </div>
+  </div>
+</div>
+</div>`;
+    }
+    if (param[i].simScore === 1) {
+      hello.innerHTML += `<div class="card_container">
+<div class="web_card">
+<div class="web_poster">
+<img class="web_image" src=${newCard.poster} alt="poster"></img>
+</div>
+  <div class="web_info">
+    <div class="web_upper">
+      <div class="web_titleandyear">
+        <div class="web_title">${newCard.title}</div>
+        <div class="web_year">(${newCard.year})</div>
+      </div>
+      <div class="web_matchandwatchlist">
+        <div class="web_match_go">Good Match</div>
+        <div class="web_watchlist"><img src="watchlist.svg.png" alt="wtag" title="Add To Watchlist"/></div>
+      </div>
+    </div>
+    <div class="web_middle">
+      <div class="web_rated">${newCard.rated}</div>
+      <div class="web_divider">|</div>
+      <div class="web_runtime">${newCard.runtime}</div>
+      <div class="web_divider">|</div>
+      <div class="web_tags">${newCard.tags
+        .toString()
+        .replace(/,/g, ", ")
+        .replace(/All /g, "")}</div>
+    </div>
+    <div class="web_ratings">
+      <div class="web_imdbrating"><img src="imdb.svg.png" alt="itag" />${
+        newCard.imdbRating
+      }/10</div>
+      <div class="web_rottentomatoes"><img src="rt.svg.png" alt="rtag" />${
+        newCard.rottenTomatoes
+      }</div>
+    </div>
+    <div class="web_plot">${newCard.plot}</div>
+    <div class="web_lower">
+      <div class="web_people">Director: ${newCard.director}</div>
+      <div class="web_divider">|</div>
+      <div class="web_stars">Stars: ${newCard.stars}</div>
+    </div>
+  </div>
+</div>
+</div>`;
+    }
+    if (hello.childElementCount >= 100) {
+      break;
+    }
   }
 }
 
@@ -61,7 +165,6 @@ let ul = document.getElementById("ul");
 ul.addEventListener("mousedown", (event) => {
   const li = event.target.closest("li");
   if (!li || !ul.contains(li)) return;
-
   li.classList.toggle("selected");
 });
 let ul2 = document.getElementById("ul2");
@@ -107,13 +210,22 @@ searchButton.addEventListener("click", (e) => {
   selectedTagsArray = [];
   hello.innerHTML = "";
 });
+
+function smooth() {
+  hello.scrollIntoView({ behavior: "smooth" });
+}
+
 searchButton.addEventListener("click", findTags);
+searchButton.addEventListener("click", smooth);
 
 let selectedTagsArray = [];
 let selectedString;
 
 function findTags() {
   let unsortedArray = [];
+  let excellentMatch = [];
+  let greatMatch = [];
+  let goodMatch = [];
   let selected = document.querySelectorAll(".selected");
   for (let i = 0; i < selected.length; i++) {
     selectedTagsArray.push(selected[i].innerText);
@@ -159,8 +271,27 @@ function findTags() {
       );
     unsortedArray[i].simScore = process(freqC);
   }
-  let sortedArray = unsortedArray.sort((a, b) => b.simScore - a.simScore);
-  newCardy(sortedArray);
+  for (let i = 0; i < unsortedArray.length; i++) {
+    if (unsortedArray[i].simScore >= 3) {
+      excellentMatch.push(unsortedArray[i]);
+    }
+  }
+  for (let i = 0; i < unsortedArray.length; i++) {
+    if (unsortedArray[i].simScore === 2) {
+      greatMatch.push(unsortedArray[i]);
+    }
+  }
+  for (let i = 0; i < unsortedArray.length; i++) {
+    if (unsortedArray[i].simScore === 1) {
+      goodMatch.push(unsortedArray[i]);
+    }
+  }
+  excellentMatch.sort((a, b) => b.imdbRating - a.imdbRating);
+  greatMatch.sort((a, b) => b.imdbRating - a.imdbRating);
+  goodMatch.sort((a, b) => b.imdbRating - a.imdbRating);
+  newCardy(excellentMatch);
+  newCardy(greatMatch);
+  newCardy(goodMatch);
 }
 
 //assigning a score for # of matches

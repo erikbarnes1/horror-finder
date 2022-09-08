@@ -1,5 +1,6 @@
 class Card {
   constructor(
+    simScore,
     title,
     year,
     poster,
@@ -12,6 +13,7 @@ class Card {
     director,
     stars
   ) {
+    this.simScore = simScore;
     this.title = title;
     this.year = year;
     this.poster = poster;
@@ -24,21 +26,5 @@ class Card {
     this.director = director;
     this.stars = stars;
   }
-}
-
-for (let i = 0; i < movLib.length; i++) {
-  let newCard = new Card(
-    `${movLib[i].title}`,
-    `${movLib[i].year}`,
-    `${movLib[i].poster}`,
-    `${movLib[i].rated}`,
-    `${movLib[i].runtime}`,
-    `${movLib[i].tags}`,
-    `${movLib[i].imdbRating}`,
-    `${movLib[i].rottenTomatoes}`,
-    `${movLib[i].plot}`,
-    `${movLib[i].director}`,
-    `${movLib[i].stars}`
-  );
 }
 export default Card;
