@@ -1,5 +1,5 @@
-import mov from "/static/finalArray.js";
-import Card from "/static/card.js";
+import mov from "./finalArray.js";
+import Card from "./card.js";
 
 function newCardy(param) {
   for (let i = 0; i < param.length; i++) {
@@ -42,10 +42,7 @@ function newCardy(param) {
       <div class="web_divider">|</div>
       <div class="web_runtime">${newCard.runtime}</div>
       <div class="web_divider">|</div>
-      <div class="web_tags">${newCard.tags
-        .toString()
-        .replace(/,/g, ", ")
-        .replace(/All /g, "")}</div>
+      <div class="web_tags">${newCard.tags.toString().replace(/,/g, ", ")}</div>
     </div>
     <div class="web_ratings">
       <div class="web_imdbrating"><img src="imdb.svg.png" alt="itag" />${
@@ -87,10 +84,7 @@ function newCardy(param) {
       <div class="web_divider">|</div>
       <div class="web_runtime">${newCard.runtime}</div>
       <div class="web_divider">|</div>
-      <div class="web_tags">${newCard.tags
-        .toString()
-        .replace(/,/g, ", ")
-        .replace(/All /g, "")}</div>
+      <div class="web_tags">${newCard.tags.toString().replace(/,/g, ", ")}</div>
     </div>
     <div class="web_ratings">
       <div class="web_imdbrating"><img src="imdb.svg.png" alt="itag" />${
@@ -132,10 +126,7 @@ function newCardy(param) {
       <div class="web_divider">|</div>
       <div class="web_runtime">${newCard.runtime}</div>
       <div class="web_divider">|</div>
-      <div class="web_tags">${newCard.tags
-        .toString()
-        .replace(/,/g, ", ")
-        .replace(/All /g, "")}</div>
+      <div class="web_tags">${newCard.tags.toString().replace(/,/g, ", ")}</div>
     </div>
     <div class="web_ratings">
       <div class="web_imdbrating"><img src="imdb.svg.png" alt="itag" />${
