@@ -6,30 +6,39 @@ body {
 .logo_container {
   display: flex;
   background-color: #f9c403;
-  align-items: center;
   justify-content: space-between;
+  max-height: 3rem;
 }
 .upper_left {
   display: flex;
+  background-color: #f9c403;
+  max-height: 4rem;
   align-items: center;
-  width: 70%;
 }
 .horror_finder {
   font-family: "Carter One", cursive;
-
   font-size: 1.5rem;
   color: #510043;
-  margin-left: 2%;
+  margin-left: 1rem;
+}
+.search-form {
+  margin-left: 1rem;
+  display: flex;
+  max-height: 1.8rem;
+  flex-direction: column;
+}
+.search-database {
+  flex-shrink: 0;
 }
 .logo_container input[type="text"] {
-  margin-left: 2.5%;
-  float: right;
-  padding: 6px;
-  padding-left: 1.5%;
   border: 2px solid #510043;
   border-radius: 1rem;
-  width: 30%;
+  width: 10rem;
+  height: 1.4rem;
   font-family: "ibm plex mono", monospace;
+}
+.hl {
+  background: #f9c403;
 }
 .logo {
   width: 4rem;
@@ -37,9 +46,9 @@ body {
 .upper_right {
   display: flex;
   align-items: center;
-  gap: 5%;
+  gap: 1rem;
   font-size: 1.25rem;
-  width: 30%;
+  background-color: #f9c403;
   justify-content: flex-end;
 }
 .watchlist {
@@ -61,7 +70,7 @@ body {
 .large_categories_container {
   display: flex;
   justify-content: center;
-  height: max-content;
+  width: min-content;
 }
 .categories_container {
   background-color: whitesmoke;
@@ -70,7 +79,6 @@ body {
   color: black;
   font-size: 2rem;
   margin-top: 2rem;
-  width: 77%;
   display: block;
   text-align: center;
 }
@@ -94,7 +102,12 @@ body {
 .other {
   border-right: 0;
 }
-ul {
+#ul0,
+#ul2,
+#ul3,
+#ul4,
+#ul5,
+#ul6 {
   display: flex;
   flex-direction: column;
   list-style-position: inside;
@@ -114,7 +127,7 @@ li {
   text-align: center;
   padding-bottom: 3%;
   font-size: 0.8rem;
-  font-family: "ibm plex mono text", monospace;
+  font-family: monospace;
 }
 .selected {
   background-color: #000000;
@@ -141,7 +154,7 @@ img[src="tag_3.png"] {
 .search {
   cursor: pointer;
   background-color: whitesmoke;
-  width: 77.3%;
+  width: 81rem;
   color: rgb(0, 0, 0);
   border: 1.5px solid #808080;
   border-radius: 0.5rem;
@@ -280,4 +293,24 @@ img[src="rt.svg.png"] {
   gap: 1rem;
   font-size: 00.8rem;
   margin-bottom: 1rem;
+}
+.suggestions {
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  /*perspective: 20px;*/
+}
+.suggestions li {
+  background: white;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem;
+  transition: background 0.2s;
+  display: flex;
+  text-transform: capitalize;
+  border: none;
+  border: 0.5px solid rgb(0, 0, 0);
+  width: 100%;
+  border-radius: 0px;
 }

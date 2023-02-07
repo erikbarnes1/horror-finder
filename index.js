@@ -1,6 +1,47 @@
 import mov from "./finalArray.js";
 import Card from "./card.js";
 
+//search databse
+
+const searchDatabase = document.querySelector(".search-database");
+const suggestions = document.querySelector(".suggestions");
+
+searchDatabase.addEventListener("change", displayMatches);
+searchDatabase.addEventListener("keyup", displayMatches);
+
+let matches = [];
+function findMatches(wordToMatch, matches) {
+  return matches.filter((movTitle) => {
+    const regex = new RegExp(wordToMatch, "gi");
+    return movTitle.title.match(regex);
+  });
+}
+
+function displayMatches() {
+  const matchArray = findMatches(this.value, mov);
+  const html = matchArray
+    .map((place) => {
+      const regex = new RegExp(this.value, "gi");
+      const movTitle = place.title.replace(
+        regex,
+        `<span class="hl">${this.value}</span>`
+      );
+      return `
+    <li>
+      <span class="name">${movTitle + " ("}</span>
+      <span class="year">${place.year + ")"}</span>
+    </li>
+      `;
+    })
+    .join("");
+  suggestions.innerHTML = html;
+  if (this.value === "") {
+    suggestions.innerHTML = null;
+  }
+}
+
+//////
+
 function newCardy(param) {
   for (let i = 0; i < param.length; i++) {
     let newCard = new Card(
@@ -152,7 +193,7 @@ function newCardy(param) {
   }
 }
 
-let ul = document.getElementById("ul");
+let ul = document.getElementById("ul0");
 ul.addEventListener("mousedown", (event) => {
   const li = event.target.closest("li");
   if (!li || !ul.contains(li)) return;
@@ -165,7 +206,7 @@ ul2.addEventListener("mousedown", (event) => {
 
   li.classList.toggle("selected");
 });
-let u3 = document.getElementById("ul3");
+let ul3 = document.getElementById("ul3");
 ul3.addEventListener("mousedown", (event) => {
   const li = event.target.closest("li");
   if (!li || !ul3.contains(li)) return;
